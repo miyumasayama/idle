@@ -1,0 +1,20 @@
+.content 
+  h1.top-title
+    | 掲示板
+    =link_to "投稿する", new_tweet_path, class: "btn btn-primary posting-btn"
+  table.table.alt-table-responsive
+    thead
+      tr
+        th = Tweet.human_attribute_name(:title)
+        th = Tweet.human_attribute_name(:created_at)
+        th
+        th
+        th
+    tbody
+      - @tweet.each do |tweet|
+        tr 
+          td = tweet.title
+          td = tweet.created_at
+          td = link_to "詳細", tweet_path(tweet.id), class:"btn btn-success"
+          td = link_to "変更", edit_tweet_path(tweet.id),class: "btn btn-warning"
+          td = link_to "削除", tweet_path(tweet.id), method: :delete, class: "btn btn-danger", data: {confirm: "本当にこの投稿を削除しますか？"}

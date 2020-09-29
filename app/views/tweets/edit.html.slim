@@ -1,0 +1,17 @@
+- if @tweet.errors
+  .ul
+    - @tweet.errors.full_messages.each do |msg|
+      .alert
+        = msg
+
+.content
+  h1.top-title
+    | 投稿を編集する
+  = form_with model: @tweet, local: true do |f|
+    .form-group
+      = f.label :title, class: 'form-name'
+      = f.text_field :title, class: 'form-control'
+    .form-group
+      = f.label :text, class: 'form-name'
+      = f.text_area :text, class: 'form-control'
+    = f.submit '変更',class: 'btn btn-warning'

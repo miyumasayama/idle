@@ -1,0 +1,12 @@
+.content
+  h1.top-title.top-title-show = @tweet.title
+  table
+    tbody
+      tr.table-show
+        th = Tweet.human_attribute_name(:created_at)
+        td = @tweet.created_at
+      tr.table-show
+        th = Tweet.human_attribute_name(:text)
+        td = @tweet.text
+  = link_to "変更", edit_tweet_path(@tweet.id),class: "btn btn-warning btn-show"
+  = link_to "削除", tweet_path(@tweet.id), method: :delete, class: "btn btn-danger btn-show", data: {confirm: "本当にこの投稿を削除しますか？"}
