@@ -210,3 +210,10 @@ ja:
         title: 見出し
         text: 概要
         created_at: 投稿日
+      user:
+        name: 名前
+        email: メールアドレス
+        password: パスワード
+        password_confirmation: パスワード（確認）
+      
+      

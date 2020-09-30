@@ -1,4 +1,7 @@
 class TweetsController < ApplicationController
+  before_action :require_login, only:[:new, :create, :edit, :update, :destroy]
+  before_action :correct_user, only:[:edit, :update, :destroy]
+
   def index
     @tweet= Tweet.all
   end
@@ -48,8 +51,19 @@ class TweetsController < ApplicationController
 
   private 
   def tweets_params
-    params.require(:tweet).permit(:title,:text)
+    params.require(:tweet).permit(:title,:text).merge(user_id: current_user.id)
   end
 
-  
+  def require_login
+    unless logged_in?
+      flash.now[:error] = "ログインしてください"
+      redirect_to login_path
+    end
+  end
+
+  def correct_user
+    unless current_user.id == @tweet.user_id
+      redirect_to tweets_path
+    end
+  end
 end

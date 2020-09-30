@@ -14,3 +14,17 @@
  *= require_self
  */
 @import "bootstrap";
+
+.nav-item{
+    float:left;
+    list-style: none;
+    margin-top:15px;
+    margin-left: 20px;
+}
+
+.nav-login-btn{
+    list-style:none;
+    float:left;
+    margin-left: 20px;
+}
+

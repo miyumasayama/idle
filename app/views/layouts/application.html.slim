@@ -8,8 +8,28 @@ html
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
   body
-    header.navbar.navbar-expand-lg.navbar-light[style="background-color:#ffc0cb"]
+    - flash.each do |message_type, message|
+      =message
+    header
+      .navbar.navbar-expand-lg.navbar-light[style="background-color:#ffc0cb"]
+        .container
+          = link_to "We Love ★ Idles",root_path,class: "navbar-brand"
+          .collapse.navbar-collapse
+            ul.navbar-navbar
+              li.nav-item
+                = link_to "ホーム"
+              li.nav-item
+                = link_to "掲示板", tweets_path
+              li.nav-item
+                = link_to "お問い合わせ"
+          .nav-btn
+            -if logged_in?
+              .nav-login-btn
+                = link_to "ログアウト", logout_path, method: :delete, class: 'btn btn-info'
+            -else
+              li.nav-login-btn
+                =link_to "ログイン", login_path, class: "btn btn-info"
+              li.nav-login-btn
+                =link_to "新規登録", signup_path, class: "btn btn-secondary"
       .container
-        = link_to "We Love ★ Idles",root_path,class: "navbar-brand"
-    .container
-      = yield
+        = yield
