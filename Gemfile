@@ -33,7 +33,7 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rspec-rails', '~> 3.6'
   gem 'spring-commands-rspec'#一回の実行時間を短縮
-  gem 'factory_bot'
+  gem 'factory_bot_rails'
 end
 
 group :development do
@@ -70,4 +70,9 @@ gem 'sprockets-rails'
 gem 'mini_racer'
 gem "bootstrap-sass"
 gem "jquery-ui-rails"
-
+gem 'carrierwave'
+gem 'pry-rails'
+gem 'rmagick'
+gem 'enum_help'
+gem 'kaminari'
+gem 'rails-ujs'

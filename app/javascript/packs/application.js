@@ -15,5 +15,9 @@ require("channels")
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
+//= require turbolinks 
+//= require activestorage
 //= require jquery
+//= require rails-ujs
 //= require bootstrap-sprockets
+//= require_tree .

@@ -1,21 +1,26 @@
 .content 
-  h1.top-title
+  h1.top-title.top-title-index
     | 掲示板
-    =link_to "投稿する", new_tweet_path, class: "btn btn-primary posting-btn"
+  .form-search
+    = form_with url: tweets_path, method: :get, local: true do |f|
+      = f.text_field :search, class: "search search-field"
+      = f.submit :検索, class: "search search-btn"
+  =link_to "投稿する", new_tweet_path, class: "btn btn-primary posting-btn"
+
   table.table.alt-table-responsive
     thead
       tr
         th = Tweet.human_attribute_name(:title)
         th = Tweet.human_attribute_name(:created_at)
-        th
+        th = Profile.human_attribute_name(:nickname)
         th
         th
     tbody
-      - @tweet.each do |tweet|
+      - @tweets.each do |tweet|
         tr 
-          td = tweet.title
+          td = link_to "#{tweet.title}",tweet_path(tweet.id)
           td = tweet.created_at
-          td = link_to "詳細", tweet_path(tweet.id), class:"btn btn-success"
+          td = link_to "#{tweet.user.profile.nickname}", profile_path(tweet.user.profile.id)
           - if current_user.present?
             - if current_user.id == tweet.user_id
               td = link_to "変更", edit_tweet_path(tweet.id),class: "btn btn-warning"
@@ -26,3 +31,4 @@
           - else
             td
             td
+  = paginate @tweets

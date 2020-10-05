@@ -1,0 +1,60 @@
+.content.top-title
+  h1.user-nickname 
+    | #{@profile.nickname}
+    span
+      | のプロフィール
+    - if current_user.present?
+      - if current_user.id == @profile.user_id
+        .btn-profile-change
+          = link_to "プロフィール変更", edit_profile_path,class: "btn btn-warning"
+  .container
+    .profile-image
+      - if @profile.image?
+        = image_tag @profile.image.url(:thumb).to_s
+      - else 
+        = image_tag "default.png", size: "150*150"
+      .small-show
+        .profile-show
+          = Profile.human_attribute_name(:sex)
+          h2.profile-item
+            | #{@profile.sex}
+        .profile-show
+          = Profile.human_attribute_name(:age)
+          h2.profile-item
+            | #{@profile.age}歳
+        .profile-show
+          = Profile.human_attribute_name(:place)
+          h2.profile-item
+            | #{@profile.place}
+    .favorite-show
+      = Profile.human_attribute_name(:favorite)
+      h2.profile-item
+        | #{@profile.favorite}  
+    .introduce-show
+      = Profile.human_attribute_name(:introduce)
+      h5.profile-item
+        | #{@profile.introduce} 
+  
+  .profile-tweets
+    h3.top-title-pre 過去の投稿
+    table.table.alt-table-responsive
+      thead
+        tr
+          th = Tweet.human_attribute_name(:title)
+          th = Tweet.human_attribute_name(:created_at)
+          th
+          th
+          th
+      tbody
+        - @tweets.each do |tweet|
+          tr
+            td = tweet.title
+            td = tweet.created_at
+            td = link_to "詳細", tweet_path(tweet.id), class: "btn btn-success"
+            - if tweet.user_id == current_user.id
+              td = link_to "変更", edit_tweet_path(tweet.id), class: "btn btn-warning"
+              td = link_to "削除", tweet_path(tweet.id), method: :delete, class: "btn btn-danger"
+            -else
+              td
+              td
+

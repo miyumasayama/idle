@@ -1,0 +1,32 @@
+= form_with model: @profile, local: true do |f|
+    .form-group
+      = f.label :ニックネーム【必須】
+      = f.text_field :nickname, class: "form-control"
+    .form-group.short-profile
+      = f.label :性別【必須】
+      .button-sex
+        .li
+          =f.radio_button :sex, :男性
+          =f.label :男性
+        .li
+          =f.radio_button :sex, :女性
+          =f.label :女性
+        .li
+          =f.radio_button :sex, :その他
+          =f.label :その他
+    .form-group.short-profile
+      = f.label :年齢【必須】
+      = f.number_field :age, class: "form-control"
+    .form-group.short-profile
+      = f.label :place
+      = f.select :place, Profile.places.keys, {}, class: "form-control"
+    .form-group
+      = f.label :推し【必須】
+      = f.text_field :favorite, class: "form-control"
+    .form-group
+      = f.label :introduce
+      = f.text_area :introduce, class: "form-control"
+    .form-group
+      = f.label :image
+      = f.file_field :image, class: "form-control"
+    = f.submit "プロフィール登録", class: "btn btn-primary"

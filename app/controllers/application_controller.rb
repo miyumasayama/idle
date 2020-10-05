@@ -6,4 +6,14 @@ class ApplicationController < ActionController::Base
             redirect_to login_path
         end
     end
+
+    def require_login
+        unless logged_in?
+            flash.now[:error] = "ログインしてください"
+            redirect_to login_path
+        end
+    end
+
+    
+        
 end

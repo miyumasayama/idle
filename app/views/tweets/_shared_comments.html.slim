@@ -1,0 +1,22 @@
+h2.comments
+    | コメント
+table.table.alt-table-responsive
+    tbody
+        - @comments.each do |comment|
+            tr
+                td = comment.created_at
+                td = link_to "#{comment.user.profile.nickname}", profile_path(comment.user.profile.id)
+                td.table-content = comment.content
+                - if current_user.present?
+                    - if current_user.id == comment.user_id
+                        td = link_to "削除", tweet_comment_path(params[:id],comment.id), method: :delete
+                    - else
+                        td
+                - else
+                    td
+.comment-form
+    = form_with model: [@tweet, @comment] do |f|
+        .form-group.comment-submit
+            = f.text_field :content, size: "50"
+            = f.hidden_field :tweet_id
+            = f.submit "コメントする"

@@ -1,0 +1,68 @@
+// Place all the styles related to the Profiles controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+
+
+.changable{
+    margin-top:-10px;
+}
+
+.textarea{
+    resize:vertical;
+    height:800px;
+}
+
+.user-nickname{
+    span{
+    font-size:20px;
+    }
+}
+
+
+//show
+.small-show{
+    float:right;
+    text-align:center;
+    
+}
+
+.btn-profile-change{
+    text-align:right;
+}
+
+.profile-show{
+    float:left;
+    padding-left:150px;
+    padding-right:20px;
+    padding-top:60px;
+}
+
+.favorite-show{
+    padding-top:50px;
+    text-align:center;
+
+}
+
+.introduce-show{
+    padding-top:50px;
+    text-align:center;
+}
+
+
+
+.top-title-pre{
+    padding-top:40px;
+}
+
+.profile-item {
+    color:#6091d3;
+    padding:15px;
+    background: #FFF;
+    border: solid 3px #6091d3;/*線*/
+    border-radius: 10px;/*角の丸み*/
+}
+
+
+
+

@@ -215,5 +215,25 @@ ja:
         email: メールアドレス
         password: パスワード
         password_confirmation: パスワード（確認）
+      profile:
+        nickname: ニックネーム
+        age: 年齢
+        sex: 性別
+        favorite: 推し
+        introduce: 自己紹介文
+        image: プロフィール画像
+        place: 住んでいるところ
+  views:
+    pagination:
+      first: 最初
+      last: 最後
+      previous: 前
+      next: 次
+  enums:
+    profile:
+      sex:
+        male: 男性
+        female: 女性
+        other: その他
       
       

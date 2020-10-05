@@ -3,7 +3,7 @@ class TweetsController < ApplicationController
   before_action :correct_user, only:[:edit, :update, :destroy]
 
   def index
-    @tweet= Tweet.all
+    @tweets= Tweet.page(params[:page]).search(params[:search]).order(updated_at: :desc)
   end
   
   def new
@@ -24,7 +24,8 @@ class TweetsController < ApplicationController
 
   def show
     @tweet = Tweet.find(params[:id])
-
+    @comments = @tweet.comments
+    @comment = Comment.new
   end
 
   def edit
@@ -45,7 +46,7 @@ class TweetsController < ApplicationController
   def destroy
     @tweet = Tweet.find(params[:id])
     if @tweet.destroy
-      redirect_to tweets_path
+      redirect_back(fallback_location: root_path)
     end
   end
 
@@ -62,6 +63,7 @@ class TweetsController < ApplicationController
   end
 
   def correct_user
+    @tweet = Tweet.find(params[:id])
     unless current_user.id == @tweet.user_id
       redirect_to tweets_path
     end
