@@ -21,39 +21,32 @@
 
 
 //show
-.small-show{
-    float:right;
-    text-align:center;
-    
-}
-
-.btn-profile-change{
-    text-align:right;
+.profile-show{
+    h2{
+        width:150px;
+        text-align:center;
+        margin-right:30px;
+    }
 }
 
 .profile-show{
     float:left;
-    padding-left:150px;
-    padding-right:20px;
-    padding-top:60px;
 }
 
 .favorite-show{
-    padding-top:50px;
-    text-align:center;
-
+    padding-top:120px;
 }
 
-.introduce-show{
-    padding-top:50px;
-    text-align:center;
+.btn-group{
+    float:right;
+}
+
+.btn-change{
+    padding-left:20px;
 }
 
 
 
-.top-title-pre{
-    padding-top:40px;
-}
 
 .profile-item {
     color:#6091d3;
@@ -62,7 +55,51 @@
     border: solid 3px #6091d3;/*線*/
     border-radius: 10px;/*角の丸み*/
 }
+.title-field{
+    width: 40%
+}
 
+//search
+input[type="number"] {
+    width:50px;
+}
 
+.search-nickname{
+    float:left;
+    padding-right:20px;
+    padding-bottom:10px;
+}
 
+.search-age{
+    padding-bottom:10px;
+}
 
+.search-favorite{
+    float:left;
+    padding-right:20px;
+
+}
+
+.search-sex{
+    padding-top:7px;
+}
+
+.search-btn1{
+    text-align:right;
+}
+.search-form{
+
+    padding: 1.65rem 2rem;
+    background-color: rgba(165, 210, 255, .4);
+    background-image:
+        linear-gradient(90deg, rgba(165, 210, 255, .3) 50%, transparent 50%),
+        linear-gradient(rgba(165, 210, 255, .3) 50%, transparent 50%);
+    background-size: 40px 40px;
+    border: 4px solid rgb(44, 132, 214);
+    margin-bottom: 50px;
+    width:500px;
+    }
+
+.table-users{
+    padding-top:60px;
+}

@@ -1,6 +1,7 @@
 class ProfilesController < ApplicationController
   before_action :require_login
   before_action :correct_user, only:[:edit, :update]
+
   def new
     @profile = Profile.new
   end
@@ -13,7 +14,13 @@ class ProfilesController < ApplicationController
       render 'new'
     end
   end
-  
+
+
+  def search
+    @search_params = profile_search_params
+    @profiles = Profile.search(@search_params)
+  end
+
   def show
     @profile = Profile.find(params[:id])
     @tweets = @profile.user.tweets
@@ -36,22 +43,28 @@ class ProfilesController < ApplicationController
 
 
 
+
   private
-  def profile_params
-    params.require(:profile).permit(:nickname, :age, :favorite, :introduce, :image, :place, :sex,:user_id).merge(user_id:current_user.id)
-  end
-
-  def require_login
-    unless logged_in?
-      flash.now[:error] = "ログインしてください"
-      redirect_to login_path
+    def profile_params
+      params.require(:profile).permit(:nickname, :age, :favorite, :introduce, :image, :place, :sex,:user_id).merge(user_id:current_user.id)
     end
-  end
 
-  def correct_user
-    @profile = Profile.find(params[:id])
-    unless current_user.id == @profile.user_id
-      redirect_to tweets_path
+    def profile_search_params
+      params.fetch(:search,{}).permit(:nickname_like, :favorite_like, :what_sex_is, :age_from, :age_to)
+      #formに検索地がないときnil
     end
-  end
+
+    def require_login
+      unless logged_in?
+        flash.now[:error] = "ログインしてください"
+        redirect_to login_path
+      end
+    end
+
+    def correct_user
+      @profile = Profile.find(params[:id])
+      unless current_user.id == @profile.user_id
+        redirect_to tweets_path
+      end
+    end
 end

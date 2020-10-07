@@ -16,6 +16,7 @@
       = link_to "変更", edit_tweet_path(@tweet.id),class: "btn btn-warning btn-show"
       = link_to "削除", tweet_path(@tweet.id), method: :delete, class: "btn btn-danger btn-show", data: {confirm: "本当にこの投稿を削除しますか？"}
     - else
+      span id="button_#{@tweet.id}"
         = render 'likes/like', locals: {tweet: @tweet, like: @like}
 
   = render 'shared_comments'

@@ -1,3 +1,18 @@
-h1 Likes#index
-p Find me in app/views/likes/index.html.slim
-
+.content
+    h1.top-title いいねした投稿
+    
+    table.table.alt-table-responsive
+        thead
+            tr
+                th = Tweet.human_attribute_name(:title)
+                th = Tweet.human_attribute_name(:created_at)
+                th = Profile.human_attribute_name(:nickname)
+                th
+                th
+        tbody
+            tr
+                - @likes.each do |like|
+                    td = link_to "#{like.tweet.title}"
+                    td = like.tweet.created_at
+                    td = link_to "#{like.tweet.user.profile.nickname}"
+                    

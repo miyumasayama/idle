@@ -13,9 +13,6 @@ class UsersController < ApplicationController
     end
   end
 
-  def show
-    @user = User.all
-  end
 
   def edit
   end

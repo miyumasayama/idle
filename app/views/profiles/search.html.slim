@@ -1,0 +1,40 @@
+.content
+    h1.top-title
+        | 友達を探す
+    .search-form
+      = form_with scope: :search, url: search_profiles_path, method: :get, local: true do |f|
+        .pform-group.search-nickname
+          = f.label :ユーザー名
+          = f.text_field :nickname_like, value: @search_params[:nickname_like]
+        .pform-group.search-age
+          = f.label :年齢
+          = f.number_field :age_from, value: @search_params[:age_from]
+          span ~
+          = f.number_field :age_to, value: @search_params[:age_to]
+        .pform-group.search-favorite
+          = f.label :推し
+          = f.text_field :favorite_like, value: @search_params[:favorite_like]
+        .pform-group.search-sex
+          = f.label :性別
+          = f.select :sex, Profile.sexes.keys, {}, value: @search_params[:what_sex_is]
+        .pform-group.search-btn1
+          = f.submit "検索", class: "search search-btn2" 
+    table.table.alt-table-responsive.table-users
+      thead
+        tr
+          th = Profile.human_attribute_name(:nickname)
+          th = Profile.human_attribute_name(:favorite)
+      tbody
+        - if @search_params.present? 
+          - @profiles.each do |profile|
+            tr
+              - if current_user.id == profile.user.id
+                td = profile.nickname
+                td = profile.favorite
+              - else
+                td = link_to "#{profile.nickname}", profile_path(profile.id)
+                td = profile.favorite
+        - else
+          td
+          td
+

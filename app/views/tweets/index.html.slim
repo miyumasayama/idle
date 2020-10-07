@@ -20,12 +20,13 @@
         tr 
           td = link_to "#{tweet.title}",tweet_path(tweet.id)
           td = tweet.created_at
-          td = link_to "#{tweet.user.profile.nickname}", profile_path(tweet.user.profile.id)
           - if current_user.present?
             - if current_user.id == tweet.user_id
-              td = link_to "変更", edit_tweet_path(tweet.id),class: "btn btn-warning"
-              td = link_to "削除", tweet_path(tweet.id), method: :delete, class: "btn btn-danger", data: {confirm: "本当にこの投稿を削除しますか？"}
+              td = tweet.user.profile.nickname
+              td = link_to "変更", edit_tweet_path(tweet.id)
+              td = link_to "削除", tweet_path(tweet.id), method: :delete, data: {confirm: "本当にこの投稿を削除しますか？"}
             - else
+              td = link_to "#{tweet.user.profile.nickname}", profile_path(tweet.user.profile.id)
               td
               td
           - else

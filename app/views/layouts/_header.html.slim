@@ -10,6 +10,8 @@
                     = link_to "掲示板", tweets_path
                 li.nav-item
                     = link_to "お問い合わせ", contact_path
+                li.nav-item
+                    = link_to "友達を探す", search_profiles_path
         .nav-btn
             -if logged_in?
                 - if has_profile?

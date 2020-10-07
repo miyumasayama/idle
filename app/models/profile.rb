@@ -2,10 +2,11 @@ class Profile < ApplicationRecord
     belongs_to :user
     validates :nickname, presence: true, length: {maximum:20}
     validates :favorite, presence: true
+    validates :sex, presence: true
     validates :introduce, length: {maximum:1000}
     validates :id, presence: false
     mount_uploader :image, ImageUploader
-    validates :sex, presence: true
+
     enum place: {
         "---":0, 
         北海道:1,青森県:2,岩手県:3,宮城県:4,秋田県:5,山形県:6,福島県:7,
@@ -15,12 +16,36 @@ class Profile < ApplicationRecord
         滋賀県:25,京都府:26,大阪府:27,兵庫県:28,奈良県:29,和歌山県:30,
         鳥取県:31,島根県:32,岡山県:33,広島県:34,山口県:35,
         徳島県:36,香川県:37,愛媛県:38,高知県:39,
-        福岡県:40,佐賀県:41,長崎県:42,熊本県:43,大分県:44,宮崎県:45,鹿児島県:46, 
-        沖縄県:47,その他の地域:48
+        福岡県:40,佐賀県:41,長崎県:42,熊本県:43,大分県:44,宮崎県:45,鹿児島県:46,沖縄県:47
     }
+
     enum sex:{
-        男性: 0,
-        女性: 1,
+        "----": 0,
+        男性: 1,
+        女性: 2,
         その他: 3
     }
+
+    scope :search, ->(search_params)do
+        return if search_params.blank?
+
+        nickname_like(search_params[:nickname_like])
+            .favorite_like(search_params[:favorite_like])
+            .what_sex_is(search_params[:what_sex_is])
+            .age_from(search_params[:age_from])
+            .age_to(search_params[:age_to])
+
+    end  
+
+    scope :nickname_like, ->(nickname){where('nickname LIKE ?', "%#{nickname}%") if nickname.present?}
+    scope :favorite_like, ->(favorite){where('favorite LIKE ?', "%#{favorite}%") if favorite.present?}
+    scope :what_sex_is, ->(sex){where(sex: sex) if sex.present? }
+    scope :age_from, ->(from){where('? <= age', from) if from.present?}
+    scope :age_to, ->(to){where('age <= ?', to) if to.present?}
+
+
+
+    #scope :メソッド名 -> (引数) { SQL文 }
+    #if 引数.present?をつけることで、検索フォームに値がない場合は実行されない
+    
 end
