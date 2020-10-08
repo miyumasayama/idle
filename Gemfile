@@ -34,6 +34,10 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.6'
   gem 'spring-commands-rspec'#一回の実行時間を短縮
   gem 'factory_bot_rails'
+  gem 'rubocop'
+  gem 'rubocop-performance'
+  gem 'rubocop-rails'
+  gem 'rubocop-rspec'
   gem 'mysql2', '>= 0.4.4'
 end
 
