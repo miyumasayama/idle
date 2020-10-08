@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_06_172921) do
+ActiveRecord::Schema.define(version: 2020_10_08_054117) do
 
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "content"
@@ -36,12 +36,12 @@ ActiveRecord::Schema.define(version: 2020_10_06_172921) do
     t.integer "age"
     t.string "favorite"
     t.text "introduce"
+    t.integer "place", default: 0, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "user_id"
     t.string "image"
-    t.integer "place", default: 0, null: false
-    t.integer "sex", default: 0, null: false
+    t.integer "sex"
   end
 
   create_table "tweets", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -57,6 +57,8 @@ ActiveRecord::Schema.define(version: 2020_10_06_172921) do
     t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "uid"
+    t.string "provider"
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
