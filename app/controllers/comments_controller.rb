@@ -1,5 +1,6 @@
 class CommentsController < ApplicationController
     before_action :require_login
+    before_action :require_fill_profile
 
     def create
         @tweet = Tweet.find(params[:tweet_id])

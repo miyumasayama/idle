@@ -20,7 +20,12 @@
 }
 
 
+
 //show
+
+.small-show{
+    padding-top:20px;
+}
 .profile-show{
     h2{
         width:150px;
@@ -28,6 +33,11 @@
         margin-right:30px;
     }
 }
+
+.introduce-show{
+    padding-top:20px;
+}
+
 
 .profile-show{
     float:left;
@@ -48,6 +58,7 @@
 
 
 
+
 .profile-item {
     color:#6091d3;
     padding:15px;
@@ -61,7 +72,7 @@
 
 //search
 input[type="number"] {
-    width:50px;
+    width:60px;
 }
 
 .search-nickname{
@@ -102,4 +113,8 @@ input[type="number"] {
 
 .table-users{
     padding-top:60px;
+}
+
+.profile-tweets{
+    padding-top:50px;
 }

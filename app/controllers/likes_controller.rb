@@ -1,6 +1,8 @@
 class LikesController < ApplicationController
   before_action :set_tweet, only: [:create, :destroy]
   before_action :require_login
+  before_action :require_fill_profile
+
   def index
     @likes = Like.where(user_id: current_user.id)
   end

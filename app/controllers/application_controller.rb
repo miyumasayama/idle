@@ -14,6 +14,10 @@ class ApplicationController < ActionController::Base
         end
     end
 
-    
+    def require_fill_profile
+        if current_user.profile.blank?
+            redirect_to new_profile_path
+        end
+    end
         
 end

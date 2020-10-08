@@ -1,6 +1,7 @@
 class TweetsController < ApplicationController
   before_action :require_login, only:[:new, :create, :edit, :update, :destroy]
   before_action :correct_user, only:[:edit, :update, :destroy]
+  before_action :require_fill_profile, only:[:new, :create,:edit, :update, :destroy]
 
   def index
     @tweets= Tweet.page(params[:page]).search(params[:search]).order(updated_at: :desc)

@@ -94,6 +94,10 @@ GEM
     crass (1.0.6)
     database_cleaner (1.0.1)
     diff-lcs (1.4.4)
+    dotenv (2.7.6)
+    dotenv-rails (2.7.6)
+      dotenv (= 2.7.6)
+      railties (>= 3.2)
     enum_help (0.0.17)
       activesupport (>= 3.0.0)
     erubi (1.9.0)
@@ -108,6 +112,7 @@ GEM
     ffi (1.13.1)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
+    hashie (4.1.0)
     hpricot (0.8.6)
     html2slim (0.2.0)
       hpricot
@@ -162,6 +167,16 @@ GEM
     nio4r (2.5.4)
     nokogiri (1.10.10)
       mini_portile2 (~> 2.4.0)
+    oauth (0.5.4)
+    omniauth (1.9.1)
+      hashie (>= 3.4.6)
+      rack (>= 1.6.2, < 3)
+    omniauth-oauth (1.1.0)
+      oauth
+      omniauth (~> 1.0)
+    omniauth-twitter (1.4.0)
+      omniauth-oauth (~> 1.1)
+      rack
     pg (1.2.3)
     popper_js (1.16.0)
     pry (0.13.1)
@@ -308,6 +323,7 @@ DEPENDENCIES
   capybara (>= 2.15)
   carrierwave
   database_cleaner (~> 1.0.1)
+  dotenv-rails
   enum_help
   factory_bot_rails
   faker (~> 1.1.2)
@@ -320,6 +336,8 @@ DEPENDENCIES
   listen (~> 3.2)
   mini_racer
   mysql2 (>= 0.4.4)
+  omniauth
+  omniauth-twitter
   pg
   pry-rails
   puma (~> 4.1)

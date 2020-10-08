@@ -11,12 +11,13 @@ Rails.application.routes.draw do
 
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
+  get 'auth/:provider/callback', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
 
   get '/signup', to: 'users#new'
   post '/signup', to: 'users#create'
 
-  resources :profiles, except: [:destroy] do
+  resources :profiles, except: [:destroy, :index] do
     collection do
       get :search
     end

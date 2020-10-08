@@ -1,6 +1,7 @@
 class ProfilesController < ApplicationController
   before_action :require_login
   before_action :correct_user, only:[:edit, :update]
+  before_action :require_fill_profile, only:[:edit, :update]
 
   def new
     @profile = Profile.new
@@ -67,4 +68,6 @@ class ProfilesController < ApplicationController
         redirect_to tweets_path
       end
     end
+
+    
 end
