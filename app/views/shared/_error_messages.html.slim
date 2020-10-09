@@ -1,5 +1,5 @@
-- if @user.errors
+- if model.errors
   .ul
-    - @user.errors.full_messages.each do |msg|
+    - model.errors.full_messages.each do |msg|
       .alert
         = msg
