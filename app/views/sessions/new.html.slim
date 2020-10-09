@@ -3,10 +3,12 @@
     | ログイン
   = form_for(:session, url: login_path) do |f|
     .form-group
-        = f.label :email
+        = f.label :メールアドレス
         = f.email_field :email, class: "form-control"
     .form-group
-        = f.label :password
+        = f.label :パスワード
         = f.password_field :password, class: "form-control"
+    .notifications
+      - flash.each do |key, value|
+        = content_tag(:div, value, class: key)
     = f.submit "ログイン",class: "btn btn-info"
-    = link_to "Twitterアカウントでログイン", "/auth/twitter"
