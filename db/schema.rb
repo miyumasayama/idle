@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_08_054117) do
+ActiveRecord::Schema.define(version: 2020_10_11_165949) do
 
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "content"
@@ -31,6 +31,16 @@ ActiveRecord::Schema.define(version: 2020_10_08_054117) do
     t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
+  create_table "messages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "room_id", null: false
+    t.text "body"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["room_id"], name: "index_messages_on_room_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
+  end
+
   create_table "profiles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "nickname"
     t.integer "age"
@@ -42,6 +52,14 @@ ActiveRecord::Schema.define(version: 2020_10_08_054117) do
     t.integer "user_id"
     t.string "image"
     t.integer "sex"
+  end
+
+  create_table "rooms", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.integer "receiver_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_rooms_on_user_id"
   end
 
   create_table "tweets", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -66,4 +84,7 @@ ActiveRecord::Schema.define(version: 2020_10_08_054117) do
   add_foreign_key "comments", "users"
   add_foreign_key "likes", "tweets"
   add_foreign_key "likes", "users"
+  add_foreign_key "messages", "rooms"
+  add_foreign_key "messages", "users"
+  add_foreign_key "rooms", "users"
 end
