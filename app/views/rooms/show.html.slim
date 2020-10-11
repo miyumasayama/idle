@@ -1,0 +1,17 @@
+h1.top-title
+  | メッセージ
+
+- if @messages.present?
+  - @messages.each do |m|
+    hr
+    small = m.user.profile.nickname 
+    span &thinsp;
+    strong = m.body
+    br
+  
+
+.form-message
+  = form_for @message do |f|
+    = f.text_field :body, placeholder: "メッセージを入力してください", size: "70"
+    = f.hidden_field :room_id, value: @room.id
+    = f.submit "入力"

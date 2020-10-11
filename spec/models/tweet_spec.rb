@@ -1,47 +1,14 @@
 require 'rails_helper'
 
 RSpec.describe Tweet, type: :model do
-  before do
-    @user = FactoryBot.create(:user)
+  describe "associate" do
+    it { should belong_to(:user) }
+    it { should have_many(:comments) }
+    it { should have_many(:likes) }
   end
 
-  it "is valid with user_id,title, and text" do
-    user = @user
-    tweet = user.tweets.build(
-      user_id:1,
-      title: "日向坂で会いましょう",
-      text: "一緒に見よう"
-    )
-    expect(tweet).to be_valid
+  describe "validate" do
+    it { should validate_presence_of(:title) }
+    it { should validate_presence_of(:text)}
   end
-
-  it "is invalid with title of 30 words" do
-    user = @user
-    tweet = user.tweets.build(
-      user_id:1,
-      title: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-      text: "ooo"
-    )
-    expect(tweet).to be_invalid
-  end
-
-  it "is invalid with no title"do
-    user = @user
-    tweet = user.tweets.build(
-      user_id:1,
-      title: "",
-      text: "ooo"
-    )
-    expect(tweet).to be_invalid
-  end
-
-  it "is invalid with no text" do
-    user = @user
-    tweet = user.tweets.build(
-      user_id:1,
-      title: "love",
-      text: ""
-    )
-    expect(tweet).to be_invalid
-  end  
 end

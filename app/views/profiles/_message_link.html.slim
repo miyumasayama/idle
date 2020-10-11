@@ -1,0 +1,8 @@
+- unless current_user.id == @user.id
+    - if @isRoom == true
+        = link_to "メッセージ", room_path(@roomId), class: "btn btn-primary"
+    - else
+        = form_for @room do |f|
+            = fields_for @entry do |e|
+                = e.hidden_field :user_id, value: @user.id
+            = f.submit "メッセージ", class: "btn btn-primary"

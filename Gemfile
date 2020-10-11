@@ -31,9 +31,10 @@ gem 'bootsnap', '>= 1.4.2', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  gem 'rspec-rails', '~> 3.6'
-  gem 'spring-commands-rspec'#一回の実行時間を短縮
-  gem 'factory_bot_rails'
+  gem 'rubocop'
+  gem 'rubocop-performance'
+  gem 'rubocop-rails'
+  gem 'rubocop-rspec'
   gem 'mysql2', '>= 0.4.4'
 end
 
@@ -56,6 +57,10 @@ group :test do
   gem 'faker', '~> 1.1.2'
   gem 'database_cleaner', '~> 1.0.1'
   gem 'launchy', '~> 2.3.0'
+  gem "shoulda-matchers"
+  gem 'rspec-rails', '~> 3.6'
+  gem 'spring-commands-rspec'#一回の実行時間を短縮
+  gem 'factory_bot_rails'
 end
 group :production do
   gem 'pg'

@@ -2,7 +2,9 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-
+.content{
+    margin-bottom:50px;
+}
 
 .changable{
     margin-top:-10px;
@@ -108,7 +110,7 @@ input[type="number"] {
     background-size: 40px 40px;
     border: 4px solid rgb(44, 132, 214);
     margin-bottom: 50px;
-    width:500px;
+    width:520px;
     }
 
 .table-users{

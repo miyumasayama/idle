@@ -11,11 +11,11 @@ Rails.application.routes.draw do
 
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
-  get 'auth/:provider/callback', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
 
   get '/signup', to: 'users#new'
   post '/signup', to: 'users#create'
+  get 'user/messages', to: 'users#show'
 
   resources :profiles, except: [:destroy, :index] do
     collection do
@@ -24,6 +24,10 @@ Rails.application.routes.draw do
   end
 
   get '/likes', to: 'likes#index'
+
+  resources :messages, onlyu: [:create]
+  resources :rooms, only: [:create, :show, :index]
+
 
   
 

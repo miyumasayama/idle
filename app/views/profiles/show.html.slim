@@ -10,6 +10,10 @@
             = link_to "いいねした投稿", likes_path, class:"btn outline btn-danger btn-profile"
           .btn-change
             = link_to "プロフィール変更", edit_profile_path,class: "btn btn-warning btn-profile"
+      - else
+        .btn-group
+          = render 'message_link'
+
   .container
     .profile-image
         = image_tag @profile.image.url(:thumb).to_s

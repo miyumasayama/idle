@@ -15,7 +15,7 @@ class LikesController < ApplicationController
         format.js
       end
     else 
-      redirect_back(fallbacklocation: root_path)
+      redirect_back(fallbacklocation: root_path) 
     end
   end
 
