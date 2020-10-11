@@ -1,4 +1,4 @@
 - if !Like.exists?(user: current_user, tweet_id: @tweet.id)
     = button_to "いいね", tweet_likes_path(@tweet.id), method: :post, remote: true,data: {"turbolinks" => false}
 - else 
-    = button_to "いいね取り消し", tweet_like_path(@tweet.id, params[:id]),method: :delete, remote: true, data: {"turbolinks" => false}
+    = button_to "いいね取り消し", tweet_like_path(@tweet.id, params[:id]), method: :delete, remote: true, data: {"turbolinks" => false}
