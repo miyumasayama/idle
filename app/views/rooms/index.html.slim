@@ -9,14 +9,14 @@
                 th 
         tbody
             - @rooms.each do |room|
-                -if current_user.id == room.user_id
+                - if current_user.id == room.user_id
                     tr
-                        td = link_to "#{room.user.profile.nickname}", profile_path(room.user.id)
+                        td = link_to "#{@user.profile.nickname}", profile_path(room.user.id)
                         td = room.created_at
                         td = link_to "メッセージ", room_path(room.id)
                 - else
                     tr
-                        td = @user.profile.nickname
+                        td = link_to "#{@user.profile.nickname}", profile_path(@user.profile.id)
                         td = room.created_at
                         td = link_to "メッセージ", room_path(room.id)
                         
