@@ -27,14 +27,14 @@ class ProfilesController < ApplicationController
     @tweets = @profile.user.tweets
 
     @user = @profile.user
-    @currentUserEntry = Entry.where(user_id: current_user.id)
-    @userEntry = Entry.where(user_id: @user.id)
+    @myEntry = Entry.where(user_id: current_user.id)
+    @yourEntry = Entry.where(user_id: @user.id)
     unless @user.id == current_user.id
-      @currentUserEntry.each do |cu|
-        @userEntry.each do |u|
-          if cu.room_id == u.room_id
+      @myEntry.each do |my|
+        @yourEntry.each do |ur|
+          if my.room_id == ur.room_id
             @isRoom = true
-            @roomId = cu.room_id
+            @roomId = my.room_id
           end
         end
       end
