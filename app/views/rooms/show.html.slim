@@ -1,0 +1,21 @@
+.content
+    h1.top-title
+        | メッセージ
+.massages
+    - if @messages.present?
+        - @messages.each do |m|
+          - if m.user_id == current_user.id
+            .form-cu
+                strong = m.body
+                br
+          - else
+            .form-u
+                small = m.user.profile.nickname
+                strong = m.body
+                br
+
+= form_with model: [@room, @message] do |f|
+    .form-group
+        = f.text_field :body, size: "50"
+        = f.hidden_field :room_id
+        = f.submit "送信"

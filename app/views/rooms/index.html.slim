@@ -1,0 +1,22 @@
+.content
+    h1.top-title
+        | メッセージ一覧
+    table.table.alt-table-responsive
+        thead
+            tr
+                th = Profile.human_attribute_name(:nickname)
+                th = Profile.human_attribute_name(:created_at)
+                th 
+        tbody
+            - @rooms.each do |room|
+                -if current_user.id == room.user_id
+                    tr
+                        td = link_to "#{room.user.profile.nickname}"
+                        td = room.created_at
+                        td
+                - else
+                    tr
+                        td 
+                        td
+                        td
+                        

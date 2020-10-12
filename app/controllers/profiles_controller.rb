@@ -25,6 +25,22 @@ class ProfilesController < ApplicationController
   def show
     @profile = Profile.find(params[:id])
     @tweets = @profile.user.tweets
+
+    @user = User.find(params[:id])
+    @userRoom = Room.find_by(user_id: current_user.id,receiver_id: @user.id)
+    @userRoom2 = Room.find_by(user_id: @user.id,receiver_id: current_user.id)
+    if @userRoom.present?
+      @isRoom = true
+      @roomId = @userRoom
+    elsif @userRoom2.present?
+      @isRoom = true
+      @roomId = @userRoom2
+    else
+      unless @user.id == current_user.id
+        @room = Room.new(user_id:current_user.id, receiver_id: @user.id)
+      end
+    end
+
   end
 
   def edit
