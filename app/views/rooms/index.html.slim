@@ -5,18 +5,18 @@
         thead
             tr
                 th = Profile.human_attribute_name(:nickname)
-                th = Profile.human_attribute_name(:created_at)
+                th = Tweet.human_attribute_name(:created_at)
                 th 
         tbody
             - @rooms.each do |room|
                 -if current_user.id == room.user_id
                     tr
-                        td = link_to "#{room.user.profile.nickname}"
+                        td = link_to "#{room.user.profile.nickname}", profile_path(room.user.id)
                         td = room.created_at
-                        td
+                        td = link_to "メッセージ", room_path(room.id)
                 - else
                     tr
-                        td 
-                        td
-                        td
+                        td = @user.profile.nickname
+                        td = room.created_at
+                        td = link_to "メッセージ", room_path(room.id)
                         

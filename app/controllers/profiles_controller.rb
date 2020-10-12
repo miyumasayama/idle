@@ -27,14 +27,14 @@ class ProfilesController < ApplicationController
     @tweets = @profile.user.tweets
 
     @user = User.find(params[:id])
-    @userRoom = Room.find_by(user_id: current_user.id,receiver_id: @user.id)
-    @userRoom2 = Room.find_by(user_id: @user.id,receiver_id: current_user.id)
+    @userRoom = Room.where(user_id: current_user.id,receiver_id: @user.id)
+    @userRoom2 = Room.where(user_id: @user.id,receiver_id: current_user.id)
     if @userRoom.present?
       @isRoom = true
-      @roomId = @userRoom
+      @roomId = @userRoom.to_a
     elsif @userRoom2.present?
       @isRoom = true
-      @roomId = @userRoom2
+      @roomId = @userRoom2.to_a
     else
       unless @user.id == current_user.id
         @room = Room.new(user_id:current_user.id, receiver_id: @user.id)
