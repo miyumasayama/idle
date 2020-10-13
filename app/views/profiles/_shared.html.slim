@@ -16,7 +16,7 @@
           =f.label :その他
     .form-group.short-profile
       = f.label :年齢【必須】
-      = f.number_field :age, class: "form-control"
+      = f.number_field :age, min:6,max:150, class: "form-control"
     .form-group.short-profile
       = f.label :place
       = f.select :place, Profile.places.keys, {}, class: "form-control"

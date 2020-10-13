@@ -25,8 +25,17 @@
 
 //show
 
+.profile-image{
+    float:left;
+}
 .small-show{
-    padding-top:20px;
+    padding-top:60px;
+    float:right;
+}
+
+.profile-show{
+    padding-left:80px;
+    float:left;
 }
 .profile-show{
     h2{
@@ -36,17 +45,14 @@
     }
 }
 
+
 .introduce-show{
     padding-top:20px;
 }
 
 
-.profile-show{
-    float:left;
-}
-
 .favorite-show{
-    padding-top:120px;
+    padding-top:250px;
 }
 
 .btn-group{

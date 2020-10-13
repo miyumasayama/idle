@@ -223,6 +223,8 @@ ja:
         introduce: 自己紹介文
         image: プロフィール画像
         place: 住んでいるところ
+      room:
+        created_at: 日付
   views:
     pagination:
       first: 最初

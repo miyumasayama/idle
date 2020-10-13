@@ -5,7 +5,7 @@
         thead
             tr
                 th = Profile.human_attribute_name(:nickname)
-                th = Tweet.human_attribute_name(:created_at)
+                th = Room.human_attribute_name(:created_at)
                 th 
                 th 
         tbody
@@ -13,7 +13,7 @@
                 - @user.each do |u|
                     tr
                         td = link_to "#{u.profile.nickname}", profile_path(u.id)
-                        td = r.messages.last.created_at
+                        td = l r.messages.last.created_at, format: :short
                         td
                         td = link_to "メッセージ", room_path(r.id), class:"btn btn-primary"
                     

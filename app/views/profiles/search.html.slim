@@ -8,9 +8,9 @@
           = f.text_field :nickname_like, value: @search_params[:nickname_like]
         .pform-group.search-age
           = f.label :年齢
-          = f.number_field :age_from, value: @search_params[:age_from]
+          = f.number_field :age_from,min:6, value: @search_params[:age_from]
           span ~
-          = f.number_field :age_to, value: @search_params[:age_to]
+          = f.number_field :age_to, max:150,value: @search_params[:age_to]
         .pform-group.search-favorite
           = f.label :推し
           = f.text_field :favorite_like, value: @search_params[:favorite_like]
