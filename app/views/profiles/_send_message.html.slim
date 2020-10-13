@@ -2,8 +2,8 @@
   = link_to "メッセージ", room_path(@roomId, @profile), class: "btn btn-primary"
 - else 
   = form_for @room do |f|
-    = f.hidden_field :reciever_id, value: @user.id
-    = f.hidden_field :room_id, value: @room.id
+    = f.hidden_field :receiver_id, value: @user.id
+    = f.hidden_field :user_id, value: current_user.id
     = f.submit "メッセージ", class: "btn btn-primary"
 
  

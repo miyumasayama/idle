@@ -7,16 +7,15 @@
                 th = Profile.human_attribute_name(:nickname)
                 th = Tweet.human_attribute_name(:created_at)
                 th 
+                th 
         tbody
-            - @rooms.each do |room|
-                - if current_user.id == room.user_id
+            - @rooms.each do |r|
+                - @user.each do |u|
                     tr
-                        td = link_to "#{@user.profile.nickname}", profile_path(room.user.id)
-                        td = room.created_at
-                        td = link_to "メッセージ", room_path(room.id)
-                - else
-                    tr
-                        td = link_to "#{@user.profile.nickname}", profile_path(@user.profile.id)
-                        td = room.created_at
-                        td = link_to "メッセージ", room_path(room.id)
+                        td = link_to "#{u.profile.nickname}", profile_path(u.id)
+                        td = r.messages.last.created_at
+                        td
+                        td = link_to "メッセージ", room_path(r.id), class:"btn btn-primary"
+                    
+                    
                         
