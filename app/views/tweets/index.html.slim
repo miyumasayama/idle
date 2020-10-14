@@ -5,7 +5,7 @@
     = form_with url: tweets_path, method: :get, local: true do |f|
       = f.text_field :search, class: "search search-field"
       = f.submit :検索, class: "search search-btn"
-  =link_to "投稿する", new_tweet_path, class: "btn btn-primary posting-btn"
+  =link_to "投稿する", new_tweet_path, class: "btn-stitch posting-btn"
 
   table.table.alt-table-responsive
     thead

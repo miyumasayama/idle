@@ -2,11 +2,10 @@ class RoomsController < ApplicationController
   before_action :require_login
     def index
       @rooms = Room.where('user_id = ? or receiver_id = ?', current_user.id, current_user.id)
-      @rooms.each do |r|
-        @user = User.where(id: r.receiver_id)
-        @user2 = User.where(id: r.user_id)
-        @users = @user.where.not(id: current_user.id).(@user2.where.not(id: current_user.id))
-      end
+      user_ids = @rooms.pluck("user_id", "receiver_id").uniq.flatten
+      user_ids.delete(current_user.id)
+      @users = User.where(id: user_ids)
+      
     end
 
 
