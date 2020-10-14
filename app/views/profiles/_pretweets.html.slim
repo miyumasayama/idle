@@ -1,0 +1,19 @@
+h3.top-title-pre 過去の投稿
+    table.table.alt-table-responsive
+      thead
+        tr
+          th.title-field = Tweet.human_attribute_name(:title)
+          th = Tweet.human_attribute_name(:created_at)
+          th
+          th
+      tbody
+        - @tweets.each do |tweet|
+          tr
+            td = link_to "#{tweet.title}",tweet_path(tweet.id)
+            td = tweet.created_at
+            - if tweet.user_id == current_user.id
+              td = link_to "変更", edit_tweet_path(tweet.id)
+              td = link_to "削除", tweet_path(tweet.id), method: :delete
+            -else
+              td
+              td
