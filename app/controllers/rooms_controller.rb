@@ -3,11 +3,9 @@ class RoomsController < ApplicationController
     def index
       @rooms = Room.where('user_id = ? or receiver_id = ?', current_user.id, current_user.id)
       @rooms.each do |r|
-        if current_user.id = r.user_id
-          @user = User.where(id: r.receiver_id)
-        else
-          @user = User.where(id: r.user_id)
-        end
+        @user = User.where(id: r.receiver_id)
+        @user2 = User.where(id: r.user_id)
+        @users = @user.where.not(id: current_user.id).(@user2.where.not(id: current_user.id))
       end
     end
 

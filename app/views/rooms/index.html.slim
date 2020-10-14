@@ -10,12 +10,13 @@
                 th 
         tbody
             - @rooms.each do |r|
-                - @user.each do |u|
-                    tr
-                        td = link_to "#{u.profile.nickname}", profile_path(u.id)
-                        td = l r.messages.last.created_at, format: :short
-                        td
-                        td = link_to "メッセージ", room_path(r.id), class:"btn btn-primary"
+               - @users.each do |u|
+                 tr
+                   td = u.profile.nickname
+                   td = r.messages.last.created_at
+                   td
+                   td
+
                     
                     
                         

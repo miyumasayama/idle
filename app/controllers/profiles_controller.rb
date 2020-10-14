@@ -28,8 +28,8 @@ class ProfilesController < ApplicationController
 
     @user = @profile.user
     unless current_user == @user
-      @userRoom = Room.find_by(:user_id=> current_user.id,:receiver_id=> @user.id)
-      @userRoom2 = Room.find_by(:user_id=> @user.id,:receiver_id=>current_user.id)
+      @userRoom = Room.find_by(user_id:current_user.id, receiver_id: @user.id)
+      @userRoom2 = Room.find_by(user_id: @user.id,receiver_id:current_user.id)
       if @userRoom.present?
         @isRoom = true
         @roomId = @userRoom
