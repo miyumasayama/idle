@@ -2,12 +2,12 @@
   h1.user-nickname 
     | #{@profile.nickname}
     span
-      | のプロフィール
+      | のプロフィール　
     - if current_user.present?
       - if current_user.id == @profile.user_id
         .btn-group
           .btn-change
-            = link_to "いいねした投稿", likes_path, class:"btn outline btn-danger btn-profile"
+            = link_to "いいねした投稿", likes_path, class:"btn btn-danger btn-profile"
           .btn-change
             = link_to "プロフィール変更", edit_profile_path,class: "btn btn-warning btn-profile"
       - else

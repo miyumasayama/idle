@@ -225,6 +225,7 @@ ja:
         place: 住んでいるところ
       room:
         created_at: 日付
+        body: メッセージ内容
   views:
     pagination:
       first: 最初

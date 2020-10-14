@@ -6,16 +6,16 @@
             tr
                 th = Profile.human_attribute_name(:nickname)
                 th = Room.human_attribute_name(:created_at)
-                th 
-                th 
+                th = Room.human_attribute_name(:body)
+                th
         tbody
-            - @rooms.each do |r|
-               - @users.each do |u|
-                 tr
-                   td = u.profile.nickname
-                   td = r.messages.last.created_at
-                   td
-                   td
+                - @users.zip(@rooms) do |u, r|
+                        tr
+                            td = link_to "#{u.profile.nickname}", profile_path(u.id)
+                            td = l r.messages.last.created_at, format: :short
+                            td = r.messages.last.body.slice(0..10)
+                            td = link_to "メッセージ", room_path(r.id), class:"btn btn-primary"
+
 
                     
                     
