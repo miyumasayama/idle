@@ -21,6 +21,7 @@ gem 'jbuilder', '~> 2.7'
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
 gem 'bcrypt', '~> 3.1.7'
+gem 'mysql2', '>= 0.4.4'
 
 
 # Use Active Storage variant
@@ -36,7 +37,6 @@ group :development, :test do
   gem 'rubocop-performance'
   gem 'rubocop-rails'
   gem 'rubocop-rspec'
-  gem 'mysql2', '>= 0.4.4'
 end
 
 group :development do
@@ -65,7 +65,6 @@ group :test do
 end
 group :production do
   gem 'unicorn', '5.4.1'
-  gem 'pg'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
