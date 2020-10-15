@@ -48,7 +48,7 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 <<: *default
-adapter: postgresql
+adapter: mysql2
 encoding: unicode
 pool: 5
 database: idle_production
