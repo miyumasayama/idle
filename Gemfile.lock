@@ -335,6 +335,9 @@ GEM
     unicorn (5.4.1)
       kgio (~> 2.6)
       raindrops (~> 0.7)
+    unicorn-rails (2.2.1)
+      rack
+      unicorn
     web-console (4.0.4)
       actionview (>= 6.0.0)
       activemodel (>= 6.0.0)
@@ -407,6 +410,7 @@ DEPENDENCIES
   turbolinks (~> 5)
   tzinfo-data
   unicorn (= 5.4.1)
+  unicorn-rails
   web-console (>= 3.3.0)
   webdrivers
   webpacker (~> 4.0)
