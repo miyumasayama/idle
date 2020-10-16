@@ -54,3 +54,4 @@ production:
   password: <%= ENV['IDLE_DATABASE_PASSWORD'] %>
 
 
+
