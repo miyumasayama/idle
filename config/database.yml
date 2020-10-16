@@ -49,11 +49,9 @@ test:
 #
 production:
   <<: *default
-  encoding: unicode
-  pool: 5
-  database: <%= Rails.application.credentials.db[:database] %>
-  username: <%= Rails.application.credentials.db[:username] %>
-  password: <%= Rails.application.credentials.db[:password] %>
-  socket: <%= Rails.application.credentials.db[:socket] %>
+  database: idle_production
+  username: idle
+  password: <%= ENV['IDLE_DATABASE_PASSWORD'] %>
+
 
 
