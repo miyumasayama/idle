@@ -47,12 +47,12 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
-#<<: *default
-adapter: mysql2
-encoding: unicode
-pool: 5
-database: idle_production
-username: idle
-password: <%= ENV['IDLE_DATABASE_PASSWORD'] %>
+poduction:
+  <<: *default
+  encoding: unicode
+  pool: 5
+  database: idle_production
+  username: idle
+  password: <%= ENV['IDLE_DATABASE_PASSWORD'] %>
 
 
