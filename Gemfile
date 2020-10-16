@@ -23,7 +23,6 @@ gem 'jbuilder', '~> 2.7'
 gem 'bcrypt', '~> 3.1.7'
 gem 'mysql2', '>= 0.4.4'
 gem 'unicorn', '5.4.1'
-gem 'unicorn-rails'
 
 
 # Use Active Storage variant
