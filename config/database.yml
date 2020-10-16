@@ -49,8 +49,6 @@ test:
 #
 production:
   <<: *default
-  encoding: unicode
-  pool: 5
   database: idle_production
   username: idle
   password: <%= ENV['IDLE_DATABASE_PASSWORD'] %>
