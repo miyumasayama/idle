@@ -22,8 +22,10 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Model has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 gem 'mysql2', '>= 0.4.4'
-gem 'unicorn', '5.4.1'
 
+group :production, :staging do
+  gem 'unicorn'
+end
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
