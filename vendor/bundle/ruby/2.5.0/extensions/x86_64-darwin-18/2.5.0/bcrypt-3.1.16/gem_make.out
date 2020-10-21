@@ -1,5 +1,9 @@
 current directory: /Users/miyu/myapp/idle/vendor/bundle/ruby/2.5.0/gems/bcrypt-3.1.16/ext/mri
+<<<<<<< HEAD
 /Users/miyu/.rbenv/versions/2.5.1/bin/ruby -I /Users/miyu/.rbenv/versions/2.5.1/lib/ruby/site_ruby/2.5.0 -r ./siteconf20201018-67208-qe7wub.rb extconf.rb
+=======
+/Users/miyu/.rbenv/versions/2.5.1/bin/ruby -I /Users/miyu/.rbenv/versions/2.5.1/lib/ruby/site_ruby/2.5.0 -r ./siteconf20201022-1677-90ptlq.rb extconf.rb
+>>>>>>> layouts/chat/visual
 creating Makefile
 
 current directory: /Users/miyu/myapp/idle/vendor/bundle/ruby/2.5.0/gems/bcrypt-3.1.16/ext/mri
@@ -36,4 +40,8 @@ linking shared-object bcrypt_ext.bundle
 
 current directory: /Users/miyu/myapp/idle/vendor/bundle/ruby/2.5.0/gems/bcrypt-3.1.16/ext/mri
 make "DESTDIR=" install
+<<<<<<< HEAD
 /usr/bin/install -c -m 0755 bcrypt_ext.bundle ./.gem.20201018-67208-1xeikuc
+=======
+/usr/bin/install -c -m 0755 bcrypt_ext.bundle ./.gem.20201022-1677-w6w0jd
+>>>>>>> layouts/chat/visual

@@ -1,5 +1,9 @@
 current directory: /Users/miyu/myapp/idle/vendor/bundle/ruby/2.5.0/gems/puma-4.3.6/ext/puma_http11
+<<<<<<< HEAD
 /Users/miyu/.rbenv/versions/2.5.1/bin/ruby -I /Users/miyu/.rbenv/versions/2.5.1/lib/ruby/site_ruby/2.5.0 -r ./siteconf20201018-85872-1q48z42.rb extconf.rb
+=======
+/Users/miyu/.rbenv/versions/2.5.1/bin/ruby -I /Users/miyu/.rbenv/versions/2.5.1/lib/ruby/site_ruby/2.5.0 -r ./siteconf20201022-1677-10rhhuo.rb extconf.rb
+>>>>>>> layouts/chat/visual
 checking for BIO_read() in -lcrypto... yes
 checking for SSL_CTX_new() in -lssl... yes
 checking for openssl/bio.h... yes
@@ -29,4 +33,8 @@ linking shared-object puma/puma_http11.bundle
 
 current directory: /Users/miyu/myapp/idle/vendor/bundle/ruby/2.5.0/gems/puma-4.3.6/ext/puma_http11
 make "DESTDIR=" install
+<<<<<<< HEAD
 /usr/bin/install -c -m 0755 puma_http11.bundle ./.gem.20201018-85872-1jzntwa/puma
+=======
+/usr/bin/install -c -m 0755 puma_http11.bundle ./.gem.20201022-1677-ij1glh/puma
+>>>>>>> layouts/chat/visual

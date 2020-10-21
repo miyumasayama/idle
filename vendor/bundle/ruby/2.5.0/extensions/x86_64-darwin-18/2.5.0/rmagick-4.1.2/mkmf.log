@@ -156,7 +156,11 @@ checked program was:
 "clang -o conftest -I/Users/miyu/.rbenv/versions/2.5.1/include/ruby-2.5.0/x86_64-darwin18 -I/Users/miyu/.rbenv/versions/2.5.1/include/ruby-2.5.0/ruby/backward -I/Users/miyu/.rbenv/versions/2.5.1/include/ruby-2.5.0 -I.  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.0.10-34/include/ImageMagick-7  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.0.10-34/include/ImageMagick-7 -std=gnu99 conftest.c  -L. -L/Users/miyu/.rbenv/versions/2.5.1/lib  -L/usr/local/Cellar/imagemagick/7.0.10-34/lib -lMagickCore-7.Q16HDRI    -L/usr/local/Cellar/imagemagick/7.0.10-34/lib -lMagickCore-7.Q16HDRI  -lruby.2.5.1  -lpthread -ldl -lobjc "
 Undefined symbols for architecture x86_64:
   "_malloc_usable_size", referenced from:
+<<<<<<< HEAD
       _t in conftest-aedc1c.o
+=======
+      _t in conftest-ddba16.o
+>>>>>>> layouts/chat/visual
 ld: symbol(s) not found for architecture x86_64
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
 checked program was:
@@ -287,7 +291,11 @@ checked program was:
 "clang -o conftest -I/Users/miyu/.rbenv/versions/2.5.1/include/ruby-2.5.0/x86_64-darwin18 -I/Users/miyu/.rbenv/versions/2.5.1/include/ruby-2.5.0/ruby/backward -I/Users/miyu/.rbenv/versions/2.5.1/include/ruby-2.5.0 -I.  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.0.10-34/include/ImageMagick-7  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.0.10-34/include/ImageMagick-7 -std=gnu99 conftest.c  -L. -L/Users/miyu/.rbenv/versions/2.5.1/lib  -L/usr/local/Cellar/imagemagick/7.0.10-34/lib -lMagickCore-7.Q16HDRI    -L/usr/local/Cellar/imagemagick/7.0.10-34/lib -lMagickCore-7.Q16HDRI  -lruby.2.5.1  -lpthread -ldl -lobjc "
 Undefined symbols for architecture x86_64:
   "__aligned_msize", referenced from:
+<<<<<<< HEAD
       _t in conftest-2c841a.o
+=======
+      _t in conftest-cd0b5e.o
+>>>>>>> layouts/chat/visual
 ld: symbol(s) not found for architecture x86_64
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
 checked program was:
@@ -355,7 +363,11 @@ checked program was:
 "clang -o conftest -I/Users/miyu/.rbenv/versions/2.5.1/include/ruby-2.5.0/x86_64-darwin18 -I/Users/miyu/.rbenv/versions/2.5.1/include/ruby-2.5.0/ruby/backward -I/Users/miyu/.rbenv/versions/2.5.1/include/ruby-2.5.0 -I.  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.0.10-34/include/ImageMagick-7  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.0.10-34/include/ImageMagick-7 -std=gnu99 conftest.c  -L. -L/Users/miyu/.rbenv/versions/2.5.1/lib  -L/usr/local/Cellar/imagemagick/7.0.10-34/lib -lMagickCore-7.Q16HDRI    -L/usr/local/Cellar/imagemagick/7.0.10-34/lib -lMagickCore-7.Q16HDRI  -lruby.2.5.1  -lpthread -ldl -lobjc "
 Undefined symbols for architecture x86_64:
   "_GetImageChannelEntropy", referenced from:
+<<<<<<< HEAD
       _t in conftest-d55954.o
+=======
+      _t in conftest-978327.o
+>>>>>>> layouts/chat/visual
 ld: symbol(s) not found for architecture x86_64
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
 checked program was:
@@ -497,7 +509,11 @@ extconf.h is:
 /* end */
 
 ======================================================================
+<<<<<<< HEAD
 Sun 18 Oct 20 19:10:35
+=======
+Thu 22 Oct 20 02:26:24
+>>>>>>> layouts/chat/visual
 This installation of RMagick 4.1.2 is configured for
 Ruby 2.5.1 (x86_64-darwin18) and ImageMagick 7.0.10
 ======================================================================

@@ -1,5 +1,9 @@
 current directory: /Users/miyu/myapp/idle/vendor/bundle/ruby/2.5.0/gems/kgio-2.11.3/ext/kgio
+<<<<<<< HEAD
 /Users/miyu/.rbenv/versions/2.5.1/bin/ruby -I /Users/miyu/.rbenv/versions/2.5.1/lib/ruby/site_ruby/2.5.0 -r ./siteconf20201018-67208-9fmlv9.rb extconf.rb
+=======
+/Users/miyu/.rbenv/versions/2.5.1/bin/ruby -I /Users/miyu/.rbenv/versions/2.5.1/lib/ruby/site_ruby/2.5.0 -r ./siteconf20201022-1677-r1263o.rb extconf.rb
+>>>>>>> layouts/chat/visual
 checking for CLOCK_MONOTONIC in time.h... yes
 checking for clockid_t in time.h... yes
 checking for clock_gettime() in -lrt... no
@@ -65,4 +69,8 @@ linking shared-object kgio_ext.bundle
 
 current directory: /Users/miyu/myapp/idle/vendor/bundle/ruby/2.5.0/gems/kgio-2.11.3/ext/kgio
 make "DESTDIR=" install
+<<<<<<< HEAD
 /usr/bin/install -c -m 0755 kgio_ext.bundle ./.gem.20201018-67208-bspxpk
+=======
+/usr/bin/install -c -m 0755 kgio_ext.bundle ./.gem.20201022-1677-1u0lcoj
+>>>>>>> layouts/chat/visual

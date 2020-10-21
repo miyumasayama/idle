@@ -1,5 +1,9 @@
 current directory: /Users/miyu/myapp/idle/vendor/bundle/ruby/2.5.0/gems/raindrops-0.19.1/ext/raindrops
+<<<<<<< HEAD
 /Users/miyu/.rbenv/versions/2.5.1/bin/ruby -I /Users/miyu/.rbenv/versions/2.5.1/lib/ruby/site_ruby/2.5.0 -r ./siteconf20201018-85872-q642io.rb extconf.rb
+=======
+/Users/miyu/.rbenv/versions/2.5.1/bin/ruby -I /Users/miyu/.rbenv/versions/2.5.1/lib/ruby/site_ruby/2.5.0 -r ./siteconf20201022-1677-1s8mfho.rb extconf.rb
+>>>>>>> layouts/chat/visual
 checking for mmap() in sys/mman.h... yes
 checking for munmap() in sys/mman.h... yes
 checking for mremap() in sys/mman.h... no
@@ -32,4 +36,8 @@ linking shared-object raindrops_ext.bundle
 
 current directory: /Users/miyu/myapp/idle/vendor/bundle/ruby/2.5.0/gems/raindrops-0.19.1/ext/raindrops
 make "DESTDIR=" install
+<<<<<<< HEAD
 /usr/bin/install -c -m 0755 raindrops_ext.bundle ./.gem.20201018-85872-1cn3bd9
+=======
+/usr/bin/install -c -m 0755 raindrops_ext.bundle ./.gem.20201022-1677-fnb1ja
+>>>>>>> layouts/chat/visual

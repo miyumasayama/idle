@@ -1,5 +1,9 @@
 current directory: /Users/miyu/myapp/idle/vendor/bundle/ruby/2.5.0/gems/rmagick-4.1.2/ext/RMagick
+<<<<<<< HEAD
 /Users/miyu/.rbenv/versions/2.5.1/bin/ruby -I /Users/miyu/.rbenv/versions/2.5.1/lib/ruby/site_ruby/2.5.0 -r ./siteconf20201018-85872-1gi5xlk.rb extconf.rb
+=======
+/Users/miyu/.rbenv/versions/2.5.1/bin/ruby -I /Users/miyu/.rbenv/versions/2.5.1/lib/ruby/site_ruby/2.5.0 -r ./siteconf20201022-1677-p5hujh.rb extconf.rb
+>>>>>>> layouts/chat/visual
 checking for brew... yes
 checking for Ruby version >= 2.3.0... yes
 checking for pkg-config... yes
@@ -20,7 +24,11 @@ checking for malloc/malloc.h... yes
 creating extconf.h
 creating Makefile
 ======================================================================
+<<<<<<< HEAD
 Sun 18 Oct 20 19:10:35
+=======
+Thu 22 Oct 20 02:26:24
+>>>>>>> layouts/chat/visual
 This installation of RMagick 4.1.2 is configured for
 Ruby 2.5.1 (x86_64-darwin18) and ImageMagick 7.0.10
 ======================================================================
@@ -50,4 +58,8 @@ linking shared-object RMagick2.bundle
 
 current directory: /Users/miyu/myapp/idle/vendor/bundle/ruby/2.5.0/gems/rmagick-4.1.2/ext/RMagick
 make "DESTDIR=" install
+<<<<<<< HEAD
 /usr/bin/install -c -m 0755 RMagick2.bundle ./.gem.20201018-85872-7y9wy2
+=======
+/usr/bin/install -c -m 0755 RMagick2.bundle ./.gem.20201022-1677-15puo9
+>>>>>>> layouts/chat/visual

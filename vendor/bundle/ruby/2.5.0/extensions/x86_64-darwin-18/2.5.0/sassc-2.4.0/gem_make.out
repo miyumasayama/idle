@@ -1,5 +1,9 @@
 current directory: /Users/miyu/myapp/idle/vendor/bundle/ruby/2.5.0/gems/sassc-2.4.0/ext
+<<<<<<< HEAD
 /Users/miyu/.rbenv/versions/2.5.1/bin/ruby -I /Users/miyu/.rbenv/versions/2.5.1/lib/ruby/site_ruby/2.5.0 -r ./siteconf20201018-67208-19h1jr7.rb extconf.rb
+=======
+/Users/miyu/.rbenv/versions/2.5.1/bin/ruby -I /Users/miyu/.rbenv/versions/2.5.1/lib/ruby/site_ruby/2.5.0 -r ./siteconf20201022-1677-s5bq9v.rb extconf.rb
+>>>>>>> layouts/chat/visual
 creating Makefile
 
 current directory: /Users/miyu/myapp/idle/vendor/bundle/ruby/2.5.0/gems/sassc-2.4.0/ext
@@ -77,4 +81,8 @@ linking shared-object sassc/libsass.bundle
 
 current directory: /Users/miyu/myapp/idle/vendor/bundle/ruby/2.5.0/gems/sassc-2.4.0/ext
 make "DESTDIR=" install
+<<<<<<< HEAD
 /usr/bin/install -c -m 0755 libsass.bundle ./.gem.20201018-67208-hrtlnn/sassc
+=======
+/usr/bin/install -c -m 0755 libsass.bundle ./.gem.20201022-1677-a4etma/sassc
+>>>>>>> layouts/chat/visual
