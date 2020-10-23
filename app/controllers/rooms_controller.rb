@@ -21,10 +21,15 @@ class RoomsController < ApplicationController
       @room = Room.find(params[:id])
       @messages = @room.messages
       @message = Message.new
-      ur_message =@messages.pluck("user_id").uniq
-      ur_message.delete(current_user.id)
-      @messanger = ur_message.user
+      if @room.user_id == current_user.id
+        ur_id = @room.receiver_id
+      else
+        ur_id = @room.user_id
+      end
+      @messanger = User.find_by(id: ur_id)
     end
+
+
 
 
 end

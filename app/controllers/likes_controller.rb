@@ -11,6 +11,7 @@ class LikesController < ApplicationController
     if @tweet.user_id != current_user.id
       @like = Like.new(user_id: current_user.id, tweet_id: @tweet.id)
       @like.save
+      @tweet.reload
       respond_to do |format|
         format.js
       end
@@ -22,9 +23,10 @@ class LikesController < ApplicationController
   def destroy
     @like = current_user.likes.find_by(tweet_id: @tweet.id)
     @like.destroy
+    @tweet.reload
     respond_to do |format|
-      format.js
-    end
+        format.js
+      end
   end
 
   private
