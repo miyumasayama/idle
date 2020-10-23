@@ -12,8 +12,15 @@
                 - @users.zip(@rooms) do |u, r|
                         tr
                             td = link_to "#{u.profile.nickname}", profile_path(u.id)
-                            td = l r.messages.last.created_at, format: :short
-                            td = r.messages.last.body.slice(0..10)
+                            - if r.messages.present?
+                                td = l r.messages.last.created_at, format: :short
+                                - if r.messages.last.body.length > 10
+                                    td #{r.messages.last.body.slice(0..10)}...
+                                - else
+                                    td = r.messages.last.body.slice(0..10)
+                            - else
+                                td
+                                td
                             td = link_to "メッセージ", room_path(r.id), class:"btn btn-primary"
 
 

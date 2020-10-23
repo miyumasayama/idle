@@ -1,8 +1,6 @@
 .content.top-title
   h1.user-nickname 
     | #{@profile.nickname}
-    span
-      | のプロフィール　
     - if current_user.present?
       - if current_user.id == @profile.user_id
         .btn-group

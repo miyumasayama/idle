@@ -5,10 +5,27 @@
 
 
 //show
-
+.top-title-message{
+    background: linear-gradient(transparent 80%, #a7d6ff 20%);
+}
 
 .form-cu{
     text-align:right
 }
 
+strong{
+    font-size:20px;
+}
+
+.cuname{
+    margin-left:30px;
+}
+.uname{
+    margin-right:30px;
+}
+
+.message-form{
+    text-align:center;
+    margin-top:30px;
+}
 

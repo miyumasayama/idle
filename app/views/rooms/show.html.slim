@@ -1,21 +1,22 @@
 .content
-    h1.top-title
-        | #{@messanger.profile.nickname}のメッセージ
+    h1.top-title.top-title-message
+        | #{@messanger.profile.nickname}とのメッセージ
 .massages
     - if @messages.present?
         - @messages.each do |m|
           - if m.user_id == current_user.id
             .form-cu
                 strong = m.body
+                small.cuname 自分
                 br
           - else
             .form-u
-                small = m.user.profile.nickname
+                small.uname = m.user.profile.nickname
                 strong = m.body
                 br
 
 = form_with model: [@room, @message] do |f|
-    .form-group
+    .form-group.message-form
         = f.text_field :body, size: "50"
         = f.hidden_field :room_id
         = f.submit "送信"
