@@ -7,23 +7,25 @@ class LikesController < ApplicationController
     @likes = Like.where(user_id: current_user.id)
   end
 
+
   def create
     if @tweet.user_id != current_user.id
       @like = Like.new(user_id: current_user.id, tweet_id: @tweet.id)
-      @like.save
-      @tweet.reload
+
       respond_to do |format|
-        format.js
+        if @like.save
+          format.html { redirect_to :back}
+          format.json { render json: {status: 'success', like: @like, liked: true} }
+        else
+          redirect_back(fallbacklocation: root_path)
+        end
       end
-    else 
-      redirect_back(fallbacklocation: root_path) 
     end
   end
 
   def destroy
     @like = current_user.likes.find_by(tweet_id: @tweet.id)
     @like.destroy
-    @tweet.reload
     respond_to do |format|
         format.js
       end

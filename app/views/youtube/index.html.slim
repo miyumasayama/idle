@@ -1,0 +1,9 @@
+.content
+  h1.top-title
+    | 今日のおすすめ動画
+  - @youtube_data.items.each do |item|
+    p 動画タイトル　：　#{item.snippet.title}
+    p チャンネル名　：　#{item.snippet.channel_title}
+    .flame
+      iframe width="560" height="315" src="https://www.youtube.com/embed/#{item.id.video_id}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen
+

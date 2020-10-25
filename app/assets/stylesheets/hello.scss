@@ -17,7 +17,7 @@
 
 .home-image{
     padding-top:30px;
-    padding-left:160px;
+    padding-left:170px;
     width:600px;
     height:300px;
     
@@ -30,3 +30,76 @@
     margin:10px;
 }
 
+
+//detail
+
+.detail-interface{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.detail-inner {
+    position: absolute;
+    top: 8%;
+    right: 0;
+    left: 0;
+    width: 480px;
+    padding-bottom: 60px;
+    margin: auto;
+    background-color: rgb(255, 255, 255);
+    border-radius: 8px;
+}
+
+.detail-header {
+    height: 20px;
+    width: 100%;
+    margin-bottom: 60px;
+    border-radius: 8px 8px 0 0;
+    background-image: url("https://s3-ap-northeast-1.amazonaws.com/progate/shared/images/lesson/react/modal_bar.svg");
+}
+
+.detaile-explanation {
+    color: #5876a3;
+    width: 384px;
+    line-height: 32px;
+    text-align: left;
+    margin: 36px auto 40px;
+}
+
+.detail-title{
+    color: #5876a3;
+    text-align: center;
+    border-bottom: 1px solid #5876a3;
+}
+
+
+
+.detail-btn{
+    font-size: 13px;
+    color: #ffffff;
+    width: 200px;
+    padding: 16px 0;
+    border: 0;
+    background-color: #8fbdfa;
+    margin: auto 0;
+    cursor: pointer;
+}
+
+.detail-btn:hover {
+    color: #8491a5;
+    background-color: #ccd9ea;
+    transition: 0.3s ease-in-out;
+}
+
+
+.detail-open-btn{
+    text-align:center;
+}
+
+.detail-close-btn{
+    text-align:center;
+}
