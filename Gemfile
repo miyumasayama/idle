@@ -94,3 +94,7 @@ gem 'omniauth-twitter'
 gem 'dotenv-rails'
 gem 'sinatra'
 gem 'listen', '~> 3.1.5'
+gem 'google-api-client', '0.9.20', require: 'google/apis/youtube_v3'
+gem 'trollop'
+
+gem 'react-rails'

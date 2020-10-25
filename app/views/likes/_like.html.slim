@@ -1,5 +1,3 @@
 .like_buttun
-    - if !Like.exists?(user: current_user, tweet_id: @tweet.id)
-        = button_to "お気に入り登録", tweet_likes_path(@tweet.id), method: :post, id: "like-buttun", remote: true,　data: {"turbolinks" => false}
-    - else
-        = button_to "お気に入り解除", tweet_like_path(@tweet.id, params[:id]), method: :delete, id: "like-buttun", remote: true, data: {"turbolinks" => false}
+    = react_component 'Like'
+ 

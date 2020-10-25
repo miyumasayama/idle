@@ -23,13 +23,13 @@ Rails.application.routes.draw do
     end
   end
 
-  get '/likes', to: 'likes#index'
+  resources :likes, only: [:index, :create, :destroy]
 
   resources :rooms, only: [:show, :index, :create]do
     resources :messages, only: [:create]
   end
 
-  
+  get '/movies', to: 'youtube#index'
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
