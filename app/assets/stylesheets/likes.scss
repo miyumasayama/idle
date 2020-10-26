@@ -1,6 +1,18 @@
 // Place all the styles related to the Likes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
-.fa-heart{
-    size:50px;
+.like-button{
+    margin-top:5px;
+    margin-left:3px;
+}
+.like-btn{
+    color: white;
+    background-color: rgb(241, 183, 203);
+    border:2px solid rgb(245, 165, 193);
+    border-radius: 5px;
+    padding:5px;
+}
+
+.unlike-btn{
+    padding:5px;
 }

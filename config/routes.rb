@@ -9,6 +9,8 @@ Rails.application.routes.draw do
     resources :likes, only: [:create, :destroy]
   end
 
+  get '/likes', to: "likes#index"
+
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   get 'auth/:provider/callback', to: 'sessions#create'
@@ -17,13 +19,13 @@ Rails.application.routes.draw do
   get '/signup', to: 'users#new'
   post '/signup', to: 'users#create'
 
+
   resources :profiles, except: [:destroy, :index] do
     collection do
       get :search
     end
   end
 
-  resources :likes, only: [:index, :create, :destroy]
 
   resources :rooms, only: [:show, :index, :create]do
     resources :messages, only: [:create]

@@ -1,3 +1,7 @@
-.like_buttun
-    = react_component 'Like'
+.like-button
+    span id="likes_buttons#{@tweet.id}"
+        - if !Like.exists?(user: current_user, tweet_id: @tweet.id)
+            = button_to "いいね！", tweet_likes_path(@tweet.id), method: :post, remote: true, class: "like-btn"
+        - else 
+            = button_to "いいね解除", tweet_like_path(@tweet.id, params[:id]),method: :delete, remote: true, class: "unlike-btn"
  

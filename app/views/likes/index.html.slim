@@ -7,12 +7,10 @@
                 th = Tweet.human_attribute_name(:title)
                 th = Tweet.human_attribute_name(:created_at)
                 th = Profile.human_attribute_name(:nickname)
-                th
-                th
         tbody
-            tr
-                - @likes.each do |like|
-                    td = link_to "#{like.tweet.title}"
-                    td = like.tweet.created_at
-                    td = link_to "#{like.tweet.user.profile.nickname}"
+            - @likes.each do |like|
+                tr
+                    td = link_to "#{like.tweet.title}", tweet_path(like.tweet_id)
+                    td = l like.tweet.created_at, format: :short
+                    td = link_to "#{like.tweet.user.profile.nickname}", profile_path(like.tweet.user.profile.id)
                     
