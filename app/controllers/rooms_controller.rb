@@ -32,5 +32,6 @@ class RoomsController < ApplicationController
 
 
 
+
 end
 
