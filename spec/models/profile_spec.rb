@@ -5,7 +5,7 @@ RSpec.describe Profile, type: :model do
     it { should belong_to(:user) }
   end
 
-  describe "validatte" do
+  describe "validate" do
     it { should validate_presence_of(:nickname) }
     it { should validate_presence_of(:favorite) }
     it { should validate_presence_of(:sex) }

@@ -6,7 +6,7 @@ class Detail extends React.Component {
     super(props);
     this.state = {
       detailOpen: false,
-      title: "このアプリについて",
+      title: "このサイトについて",
       explanation: "ここでは、「アイドルが好き」という共通の趣味を持った仲間を探すことができます。掲示板で仲間を集めることも、気になる人に個別にメッセージを送ることもできます。日本が誇るアイドルという文化の輪をもっともっと広げましょう。"
     };
   }
