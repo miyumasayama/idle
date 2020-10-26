@@ -4,7 +4,7 @@
     tbody
       tr.table-show
         th = Tweet.human_attribute_name(:created_at)
-        td = @tweet.created_at
+        td = l @tweet.created_at, format: :short
       tr.table-show
         th = Profile.human_attribute_name(:nickname)
         td = link_to "#{@tweet.user.profile.nickname}", profile_path(@tweet.user.profile.id)
