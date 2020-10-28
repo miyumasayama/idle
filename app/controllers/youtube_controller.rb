@@ -1,6 +1,6 @@
 
 class YoutubeController < ApplicationController
-    require 'trollop'
+
     GOOGLE_API_KEY = Rails.application.credentials.api_key[:google]
 
     def find_videos(keyword, after: 1.months.ago, before: Time.now)

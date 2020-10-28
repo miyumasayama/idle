@@ -67,6 +67,35 @@ body{
     border-radius: 15px;    /*角を丸くする*/
 }
 
+
+
+//header
+.btn-header-green{
+    background-color:rgb(137, 211, 137);
+    border:rgb(137, 211, 137);
+
+}
+.btn-header-blue{
+    background-color:rgb(127, 176, 216);
+    border:rgb(127, 176, 216);
+}
+.btn-header-yellow{
+    background-color:rgb(221, 215, 137);
+    border:rgb(221, 215, 137);
+}
+.header-btn{
+    border-radius:5px;
+    padding:8px 14px;
+    color:white;
+}
+
+.header-btn:hover{
+    background-color: rgb(180, 178, 179)
+}
+
 //footer
 
-
+footer{
+    height:300px;
+    margin-top:200px;
+}
