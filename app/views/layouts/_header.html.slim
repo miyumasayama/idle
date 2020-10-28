@@ -5,30 +5,30 @@
         .collapse.navbar-collapse
             ul.navbar-navbar
                 li.nav-item
-                    = link_to "掲示板", tweets_path
+                    = button_to "掲示板", tweets_path, method: :get,class: "btn-header-green header-btn"
                 -if logged_in?
                     - if has_profile?
                         li.nav-item
-                            = link_to "プロフィール", profile_path(current_user.id)
+                            = button_to "プロフィール", profile_path(current_user.id), method: :get,class: "btn-header-blue header-btn"
                     - else
                         li.nav-item
-                            = link_to "プロフィール", new_profile_path,class: 'btn btn-secondary' 
+                            = button_to "プロフィール", new_profile_path, method: :get,class: "btn-header-blue header-btn"
                 - else
                     li.nav-item
-                        = link_to "プロフィール", login_path
+                        = button_to "プロフィール", login_path, method: :get,class: "btn-header-blue header-btn"
                 li.nav-item
-                    = link_to "友達を探す", search_profiles_path
+                    = button_to "友達を探す", search_profiles_path, method: :get, class: "btn-header-yellow header-btn"
                 li.nav-item
-                    = link_to "メッセージ", rooms_path
+                    = button_to "メッセージ", rooms_path, method: :get, class: "btn-header-green header-btn"
                 li.nav-item
-                    = link_to "おすすめ動画", movies_path
+                    = button_to "おすすめ動画", movies_path, method: :get, class: "btn-header-blue header-btn"
                 
         .nav-btn
             -if logged_in?
                 li.nav-login-btn
-                    = link_to "ログアウト", logout_path, method: :delete, class: 'btn btn-info'
+                    = link_to "ログアウト", logout_path, data: {method: :delete}
             -else
                 li.nav-login-btn
-                    =link_to "ログイン", login_path, class: "btn btn-info"
+                    = link_to "ログイン", login_path
                 li.nav-login-btn
-                    =link_to "新規登録", signup_path, class: "btn btn-secondary"
+                    =link_to "新規登録", signup_path
