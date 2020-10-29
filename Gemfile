@@ -62,9 +62,10 @@ group :test do
   gem 'database_cleaner', '~> 1.0.1'
   gem 'launchy', '~> 2.3.0'
   gem "shoulda-matchers"
-  gem 'rspec-rails', '~> 3.6'
+  gem 'rspec-rails', '4.0.0.beta3'
   gem 'spring-commands-rspec'#一回の実行時間を短縮
   gem 'factory_bot_rails'
+  gem 'rails-controller-testing'
 end
 group :production do
   

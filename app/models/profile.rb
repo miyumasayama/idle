@@ -19,9 +19,10 @@ class Profile < ApplicationRecord
 
   scope :nickname_like, ->(nickname) { where('nickname LIKE ?', "%#{nickname}%") if nickname.present? }
   scope :favorite_like, ->(favorite) { where('favorite LIKE ?', "%#{favorite}%") if favorite.present? }
-  scope :what_sex_is, ->(sex) { where(sex: sex) if sex.present? }
+  scope :what_sex_is, ->(sex) { where(sex: sex{}) if sex.present? }
   scope :age_from, ->(from) { where('? <= age', from) if from.present? }
   scope :age_to, ->(to) { where('age <= ?', to) if to.present? }
+
 
   #scope :メソッド名 -> (引数) { SQL文 }
   #if 引数.present?をつけることで、検索フォームに値がない場合は実行されない
@@ -34,11 +35,11 @@ class Profile < ApplicationRecord
     滋賀県:25,京都府:26,大阪府:27,兵庫県:28,奈良県:29,和歌山県:30,
     鳥取県:31,島根県:32,岡山県:33,広島県:34,山口県:35,
     徳島県:36,香川県:37,愛媛県:38,高知県:39,
-    福岡県:40,佐賀県:41,長崎県:42,熊本県:43,大分県:44,宮崎県:45,鹿児島県:46,沖縄県:47
+    福岡県:40,佐賀県:41,長崎県:42,熊本県:43,大分県:44,宮崎県:45,鹿児島県:46,沖縄県:47,それ以外:48
   }
 
   enum sex:{
-    "----": 0,
+    "----":0,
     男性: 1,
     女性: 2,
     その他: 3
