@@ -1,7 +1,7 @@
 .like-button
     span id="likes_buttons#{@tweet.id}"
         - if !Like.exists?(user_id: current_user.id, tweet_id: @tweet.id)
-            = button_to "いいね！", tweet_likes_path(@tweet.id),method: :post, remote: true, class: "like-btn"
-        - else Like.exists?(user_id: current_user.id, tweet_id:  @tweet.id, id: params[:id])
-            = button_to "いいね済み", tweet_like_path(@tweet.id, params[:id]),method: :delete, remote: true, class: "unlike-btn"
+            = button_to "いいね！", tweet_likes_path(@tweet.id),method: :post, remote: true, class: "like-btn",data: {"turbolinks"=>false}
+        - else
+            = button_to "いいね済み", tweet_like_path(@tweet.id, current_user.id),method: :delete, remote: true, class: "unlike-btn"
     
