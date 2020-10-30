@@ -27,6 +27,11 @@ class TweetsController < ApplicationController
     @tweet = Tweet.find(params[:id])
     @comment = Comment.new
     @comments = @tweet.comments
+    if @tweet.user_id != current_user.id
+      if Like.exists?
+        @like = Like.where(user_id: current_user.id, tweet_id: @tweet.id)
+      end
+    end
   end
 
   def edit

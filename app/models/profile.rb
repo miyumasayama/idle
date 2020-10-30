@@ -11,11 +11,12 @@ class Profile < ApplicationRecord
     return if search_params.blank?
 
     nickname_like(search_params[:nickname_like])
-        .favorite_like(search_params[:favorite_like])
-        .what_sex_is(search_params[:what_sex_is])
-        .age_from(search_params[:age_from])
-        .age_to(search_params[:age_to])
+      .favorite_like(search_params[:favorite_like])
+      .what_sex_is(search_params[:what_sex_is])
+      .age_from(search_params[:age_from])
+      .age_to(search_params[:age_to])
   end
+
 
   scope :nickname_like, ->(nickname) { where('nickname LIKE ?', "%#{nickname}%") if nickname.present? }
   scope :favorite_like, ->(favorite) { where('favorite LIKE ?', "%#{favorite}%") if favorite.present? }
@@ -38,7 +39,7 @@ class Profile < ApplicationRecord
   }
 
   enum sex:{
-    "----": 0,
+    " ": 0,
     男性: 1,
     女性: 2,
     その他: 3

@@ -16,7 +16,7 @@
           = f.text_field :favorite_like, value: @search_params[:favorite_like]
         .pform-group.search-sex
           = f.label :性別
-          = f.select :sex, Profile.sexes.keys, {}, value: @search_params[:what_sex_is]
+          = f.select :what_sex_is, Profile.sexes.keys, {}, value: @search_params[:what_sex_is]
         .pform-group.search-btn1
           = f.submit "検索", class: "search search-btn2" 
     table.table.alt-table-responsive.table-users
