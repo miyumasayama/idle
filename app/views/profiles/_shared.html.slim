@@ -1,7 +1,7 @@
 = form_with model: @profile, local: true do |f|
     .form-group
       = f.label :ニックネーム【必須】
-      = f.text_field :nickname, class: "form-control"
+      = f.text_field :nickname, class: "form-control", id: "profile-nickname"
     .form-group.short-profile
       = f.label :性別
       .button-sex
@@ -16,13 +16,13 @@
           =f.label :その他
     .form-group.short-profile
       = f.label :年齢【必須】
-      = f.number_field :age, min:6,max:150, class: "form-control"
+      = f.number_field :age, min:6,max:150, class: "form-control", id: "profile-age"
     .form-group.short-profile
       = f.label :place
       = f.select :place, Profile.places.keys, {}, class: "form-control"
     .form-group
       = f.label :推し【必須】
-      = f.text_field :favorite, class: "form-control"
+      = f.text_field :favorite, class: "form-control", id: "profile-favorite"
     .form-group
       = f.label :introduce
       = f.text_area :introduce, class: "form-control"

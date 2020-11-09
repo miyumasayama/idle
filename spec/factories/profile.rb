@@ -1,7 +1,6 @@
 FactoryBot.define do
   factory :profile do    
-    user
-
+    user_id{1}
     nickname { "有村架純" }
     age { 22 }
     favorite { "菅田将暉" }
