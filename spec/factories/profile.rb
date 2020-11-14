@@ -1,6 +1,8 @@
 FactoryBot.define do
+
   factory :profile,class: Profile do   
     id {1}
+
     user_id{1}
     nickname { "有村架純" }
     age { 22 }

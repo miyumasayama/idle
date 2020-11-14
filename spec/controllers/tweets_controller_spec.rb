@@ -2,6 +2,7 @@ require 'rails_helper'
 
 RSpec.describe TweetsController, type: :controller do
     let(:user){create(:user)}
+
     let(:profile){create(:profile, user:user)}
     let(:tweet){create(:tweet, user:user)}
     let(:anotheruser){create(:anotheruser)}
@@ -12,6 +13,8 @@ RSpec.describe TweetsController, type: :controller do
         user_id: user.id}
     end
     let!(:tweet2){create(:tweet2, user:user)}
+
+
 
 
     describe 'tweet#index'do
@@ -220,3 +223,4 @@ RSpec.describe TweetsController, type: :controller do
         end
     end
 end
+
