@@ -51,7 +51,8 @@ class ProfilesController < ApplicationController
     @profile = Profile.find(params[:id])
     respond_to do |format|
       if @profile.update(profile_params)
-        format.html {redirect_to profile_path(params[:id], notice: '変更しました')}
+        format.html {redirect_to profile_path(params[:id])}
+        flash[:notice] = '変更しました'
       else
         format.html{render 'edit'}
       end
@@ -84,6 +85,5 @@ class ProfilesController < ApplicationController
         redirect_to tweets_path
       end
     end
-
     
 end

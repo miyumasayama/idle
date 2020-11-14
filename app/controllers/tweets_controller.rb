@@ -1,5 +1,5 @@
 class TweetsController < ApplicationController
-  before_action :require_login, only:[:new, :create, :edit, :update, :destroy]
+  before_action :require_login, only:[:new, :create, :edit, :update, :destroy, :show]
   before_action :correct_user, only:[:edit, :update, :destroy]
   before_action :require_fill_profile, only:[:new, :create,:edit, :update, :destroy]
 
@@ -42,7 +42,8 @@ class TweetsController < ApplicationController
     @tweet = Tweet.find(params[:id])
     respond_to do |format|
       if @tweet.update(tweets_params)
-        format.html {redirect_to tweet_path(params[:id], notice: '変更しました')}
+        format.html {redirect_to tweet_path(params[:id])}
+        flash[:notice] = '変更しました'
       else
         format.html{render 'edit'}
       end
@@ -53,6 +54,7 @@ class TweetsController < ApplicationController
     @tweet = Tweet.find(params[:id])
     if @tweet.destroy
       redirect_to tweets_path
+      flash[:success] = '削除しました'
     end
   end
 
