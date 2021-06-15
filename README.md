@@ -1,5 +1,7 @@
 # README
 
+アイドル好きの人と掲示板やメッセージで繋がることができるWEBアプリです。
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
